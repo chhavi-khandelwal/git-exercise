@@ -1,0 +1,217 @@
+solution 1.
+
+git init
+
+solution 2.
+
+git add c.txt
+vi c.txt
+:wq
+git status
+
+solution 3.
+
+git commit -m 'changes done to c file'
+
+solution 4.
+
+
+vinsol@vinsol:~$ git init
+Reinitialized existing Git repository in /home/vinsol/.git/
+vinsol@vinsol:~$ echo "hello1" > one.txt
+vinsol@vinsol:~$ echo "hello2" > two.txt
+vinsol@vinsol:~$ vi one.txt
+vinsol@vinsol:~$ vi two.txt
+vinsol@vinsol:~$ git add one.txt two.txt
+vinsol@vinsol:~$ git commit -m "done"
+[master 01eb49e] done
+ 1 file changed, 2 insertions(+)
+ create mode 100644 two.txt
+vinsol@vinsol:~$ git diff
+vinsol@vinsol:~$ git rm one.txt
+rm 'one.txt'
+vinsol@vinsol:~$ git commit -m "second done"
+[master 8484850] second done
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 one.txt
+vinsol@vinsol:~$ git diff
+vinsol@vinsol:~$ git  diff HEAD
+vinsol@vinsol:~$ git commit -m "done third"
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+
+solution 5.
+
+vinsol@vinsol:~$ vi three.txt
+vinsol@vinsol:~$ git commit -m "d"
+[master 785136f] d
+ 2 files changed, 5 insertions(+)
+ create mode 100644 one.txt
+ create mode 100644 three.txt
+vinsol@vinsol:~$ git reset --hard HEAD
+HEAD is now at 785136f d
+vinsol@vinsol:~$ vi three.txt
+vinsol@vinsol:~$ 
+
+solution 6.
+
+vinsol@vinsol:~$ vi one.txt
+vinsol@vinsol:~$ git add one.txt
+vinsol@vinsol:~$ git reset --hard HEAD
+HEAD is now at 8484850 second done
+
+
+solution 7.
+
+
+vinsol@vinsol:~$ vi three.txt
+vinsol@vinsol:~$ git commit -m "d"
+[master 785136f] d
+ 2 files changed, 5 insertions(+)
+ create mode 100644 one.txt
+ create mode 100644 three.txt
+vinsol@vinsol:~$ git reset --hard HEAD
+HEAD is now at 785136f d
+vinsol@vinsol:~$ vi three.txt
+
+solution 8.
+
+vinsol@vinsol:~$ vi a.txt
+vinsol@vinsol:~$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+nothing added to commit but untracked files present (use "git add" to track)
+vinsol@vinsol:~$ git add a.txt
+vinsol@vinsol:~$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   a.txt
+vinsol@vinsol:~$ git commit -m 'done'
+[master ba86c3a] done
+ 1 file changed, 2 insertions(+)
+ create mode 100644 a.txt
+vinsol@vinsol:~$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+
+
+
+solution 9. 
+
+git log
+
+solution 10.
+
+vinsol@vinsol:~$ git show a3a20c42fdc287f79
+
+solution 11.
+
+vinsol@vinsol:~$ git branch feature1
+vinsol@vinsol:~$ git branch feature2
+vinsol@vinsol:~$ git branch -d feature2
+Deleted branch feature2 (was ba86c3a).
+
+solution 12.
+
+vinsol@vinsol:~$ git checkout feature1
+Switched to branch 'feature1'
+vinsol@vinsol:~$ git commit -m 'done'
+# On branch feature1
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+
+solution 13.
+
+vinsol@vinsol:~$ git checkout master
+Switched to branch 'master'
+vinsol@vinsol:~$ git add a.txt
+vinsol@vinsol:~$ git commit -m 'done again'
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+
+
+solution 14.
+
+vinsol@vinsol:~$ git checkout feature1
+Switched to branch 'feature1'
+vinsol@vinsol:~$ vi b.txt
+vinsol@vinsol:~$ git add b.txt
+vinsol@vinsol:~$ git commit -m 'feat'
+[feature1 fdc0f4f] feat
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+vinsol@vinsol:~$ git checkout master
+Switched to branch 'master'
+vinsol@vinsol:~$ vi b.txt
+vinsol@vinsol:~$ git add b.txt
+vinsol@vinsol:~$ git commit -m 'mast'
+[master c91887a] mast
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+vinsol@vinsol:~$ git merge feature1
+Auto-merging b.txt
+CONFLICT (add/add): Merge conflict in b.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+solution 15.
+
+git checkout feature2
+vi a.txt
+git add a.txt
+git commit -m 'added'
+
+solution 16.
+
+git checkout master
+vi c.txt
+git add .txt
+git commit -m 'added'
+
+
+solution 17.
+
+git checkout feature2
+vi c.txt
+git add c.txt
+git commit -m 'done'
+git checkout master
+vi c.txt
+got add c.txt
+git commit -m 'done1'
+git rebase master
+git rebase --continue
+
+
+solution 18.
+
+git diff
+
+
+solution 19.
+
+git stash
+git stash list
+git stash apply
+git stash drop stash@(0)
+
+
+solution 20.
+
+git init
+touch readme
+git add readme
+git commit -m 'committed'
+git remote add origin https://github.com/chhavi-khandelwal/git-files.git
+git push origin master
+
+
+
+
+
+
+
+
